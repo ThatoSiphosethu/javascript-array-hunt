@@ -93,42 +93,87 @@ $(document).ready(function () {
         Find the first and last string in the array.
         Output them to td#firstLast
          */
+        var first = myArray[0];
+        var lastIndex = myArray.length - 1;
+        var last = myArray[lastIndex];
 
+        $("td#firstLast").text(first + " " + last);
 
         /*
         Find the first string that contains an 'n'.
         Output it to td#firstEnn
          */
+        for (var w = 0; w < myArray.length; w++)
+        {
+            var q = myArray[w];
+
+            if (q.includes("n")){break}
+        }
+        $("td#firstEnn").text(q)
 
 
         /*
         Find all of the strings with less than 6 characters.
         Output them to td#lessThanSix
          */
-
+        var i = [];
+        myArray.forEach(function (str) {
+            if(str.length < 6) {
+                i.push(str)}
+        })
+        $("td#lessThanSix").text(i);
 
         /*
         Find the longest string in the array.
         Output it to td#longName
          */
 
+        var i = 0;
+        var r = 0;
+
+        for (var s = 0; s < myArray.length; s++)
+        {if(myArray[s].length > i){i = myArray[s].length; r = s;}}
+
+        $("td#longName").text(myArray[r]);
+
 
         /*
         Find all of the strings that do not contain the letter 's'.
         Output them to td#noEss
          */
+        var r = [];
+            for (var i = 0; i < myArray.length; i++)
+            {
+                if (!myArray[i].includes("s"))
+                  r.push(myArray[i]);
+            }
+        $("td#noEss").text(r)
 
 
         /*
         Output all of the strings, but with all of their vowels
         in uppercase, to td#upperVowels
          */
+        var v = [];
 
+        for (var i in myArray) {
+            if (vowels.includes(myArray[i]))
+            {
+                else {v.push(myArray.upper)}
+            }
+        }
+
+        $("td#upperVowels").text(i);
 
         /*
         Output all of the strings in reverse order and separated by
         ' - ' to td#reverseDash
          */
+        var myArray = [];
+
+         = myArray.match();
+
+        for (var i = 0; i < myArray.length; i++)
 
 
     }
